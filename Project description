@@ -1,0 +1,20 @@
+# Childcare Center Compliance in NYC
+
+This project analyzes over 27,000 childcare inspection records from New York City to identify violation trends, borough-level disparities, and predictive patterns using machine learning techniques.
+
+# Tools & Technologies
+- Python, Pandas, NumPy, Matplotlib, Seaborn
+- Scikit-learn (Random Forest)
+
+# Key Features
+- Cleaned and preprocessed raw inspection data
+- Exploratory data analysis (EDA) to uncover violation patterns
+- Built a Random Forest model that achieved 97% accuracy in predicting critical violations
+- Delivered borough-wise policy recommendations to improve compliance
+
+# Objective
+Support regulators and policymakers in prioritizing inspections and improving public health outcomes through data-driven insights.
+
+
+
+
