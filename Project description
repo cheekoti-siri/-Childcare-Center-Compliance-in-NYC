@@ -1,22 +1,50 @@
-# Childcare Center Compliance in NYC
+Childcare Center Compliance in NYC – Capstone Project 
 
-This project analyzes over 27,000 childcare inspection records from New York City to identify violation trends, borough-level disparities, and predictive patterns using machine learning techniques.
+## Overview
+This project investigates **compliance patterns in NYC childcare centers** using inspection data from the Department of Health and Mental Hygiene (DOHMH). The goal is to understand the **drivers behind violation rates**, build **predictive models** to anticipate compliance failures, and offer **policy-relevant insights** for improving child safety and regulatory efficiency.
 
-# Tools & Technologies
-- Python, Pandas, NumPy, Matplotlib, Seaborn
-- Scikit-learn (Random Forest)
+## Research Questions
+1. What is the distribution of violation rates across NYC boroughs?
+2. How do program types (e.g., Preschool vs. Infant/Toddler) affect violations?
+3. What are the historical trends in critical and public health hazard violations?
+4. Does maximum center capacity correlate with violation rates?
+5. Can we predict critical violations using operational and demographic features?
 
-# Key Features
-- Cleaned and preprocessed raw inspection data
-- Exploratory data analysis (EDA) to uncover violation patterns
-- Built a Random Forest model that achieved 97% accuracy in predicting critical violations
-- Delivered borough-wise policy recommendations to improve compliance
+## Dataset
+* Source: [NYC Open Data – DOHMH Childcare Center Inspections](https://data.cityofnewyork.us/Health/DOHMH-Childcare-Center-Inspections/dsg6-ifza)
+* 27,000+ inspection records across 3 years
+* Key variables: Violation rates, program type, borough, capacity, staff count, violation type
 
-# Objective
-Support regulators and policymakers in prioritizing inspections and improving public health outcomes through data-driven insights.
+## Data Processing
+* Removed missing and low-utility columns
+* Imputed missing values using median/mode
+* Feature engineering:
 
-# Data set url
-DOHMH Childcare center inspections | NYC Open data. 
-(2023, April 26). https://data.cityofnewyork.us/Health/DOHMH-Childcare-Center-Inspections/dsg6-ifza/about_data
+  * Binary flags for critical violations
+  * Center age derived from inspection and permit dates
+  * Large center flag (capacity > 100)
 
+## Modeling & Results
+### ➤ Violation Rate Insights
+* Bronx has the **highest and most variable** violation rates.
+* Preschool programs showed **better compliance**; Infant/Toddler centers had higher risks.
+### ➤ Linear & Random Forest Regression
+* Max capacity alone poorly predicted violations (R² ≈ 0.006).
+* Combined features (borough, program type, etc.) boosted performance (R² ≈ 0.53 with Random Forest).
+### ➤ Random Forest Classification
+* **97% accuracy** in predicting critical violations
+* Most influential features: Borough, childcare type, historical violations, facility characteristics
 
+## Visualizations
+Created interactive plots and dashboards (e.g., boxplots, violin plots, bar charts) using:
+* `matplotlib`
+* `seaborn`
+* `sklearn` for model training and evaluation
+
+## Conclusion
+Childcare compliance varies widely by borough and program type. Predictive modeling shows strong potential for proactive inspections. Data-driven policy can enhance oversight efficiency and safety in NYC childcare centers.
+
+## Future Work
+* Include seasonal and neighborhood-level data
+* Add staff training/certification features
+* Explore deep learning (e.g., neural networks) and time series forecasting
